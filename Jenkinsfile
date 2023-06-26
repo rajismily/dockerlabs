@@ -12,7 +12,10 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'docker run --name Docker1 myapp'
+                sh '''
+                    docker run --name Docker1 myapp
+                   '''
+
             }
         }
 
