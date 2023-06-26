@@ -5,7 +5,8 @@ pipeline {
 
         stage('Build') {
             steps {
-               echo "whoami"
+                whoami
+                git --version
                 sh 'docker build -t myapp .'
             }
         }
