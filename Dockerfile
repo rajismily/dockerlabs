@@ -6,13 +6,13 @@ FROM python:3.9
 WORKDIR /app
 
 # Copy the requirements file to the container
-COPY requirements.txt .
+#COPY requirements.txt .
 
 # Install the dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install 
 
 # Copy the application code to the container
-COPY . .
+#COPY . .
 
 # Expose the desired port for the web application
 EXPOSE 8000
