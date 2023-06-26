@@ -12,7 +12,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'docker run --name Docker -p 8085:8000 myapp'
+                sh 'docker run --name Docker myapp'
             }
         }
 
