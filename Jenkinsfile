@@ -13,9 +13,10 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh '''
+                sh """
                     docker run --name NewDocker myapp
-                   '''
+                    docker rm -f NewDocker
+                   """
 
             }
         }
