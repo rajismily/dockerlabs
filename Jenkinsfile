@@ -5,27 +5,27 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'docker build -t myapp .'
+                sh 'sudo docker build -t myapp .'
             }
         }
 
         stage('Test') {
             steps {
-                sh 'docker run --name Docker -p 8085:8000 myapp'
+                sh 'sudo docker run --name Docker -p 8085:8000 myapp'
             }
         }
 
         stage('Deploy') {
             steps {
-                sh 'docker tag myapp rajismily/myapp:latest'
-                sh 'docker push rajismily/myapp:latest'
+                sh 'sudo docker tag myapp rajismily/myapp:latest'
+                sh 'sudo docker push rajismily/myapp:latest'
             }
         }
 
         stage('Cleanup') {
             steps {
-                sh 'docker rmi myapp'
-                sh 'docker rmi rajismily/myapp:latest'
+                sh 'sudo docker rmi myapp'
+                sh 'sudo docker rmi rajismily/myapp:latest'
             }
         }
     }
