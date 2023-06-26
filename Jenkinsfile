@@ -13,7 +13,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'docker run --name Docker myapp'
-                sh 'docker rm Docker || true'
+                sh  docker rm Docker || true
             }
         }
 
