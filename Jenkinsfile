@@ -12,8 +12,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh 'docker run --name Docker myapp'
-                sh 'docker rm -f Docker || true'
+                sh 'docker run --name Docker1 myapp'
             }
         }
 
