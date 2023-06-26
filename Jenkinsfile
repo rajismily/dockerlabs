@@ -13,7 +13,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh '''
-                    docker run --name Docker1 myapp
+                    docker run --name NewDocker myapp
                    '''
 
             }
