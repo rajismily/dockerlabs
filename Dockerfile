@@ -1,22 +1,14 @@
+# Use the official Nginx base image
+FROM nginx:latest
 
-# Use a base image with the desired runtime environment
-FROM python:3.9
+# Copy custom configuration file from the current directory
+COPY nginx.conf /etc/nginx/nginx.conf
 
-# Set the working directory inside the container
-WORKDIR /app
+# Copy static website files to the default Nginx public folder
+COPY public /usr/share/nginx/html
 
-# Copy the requirements file to the container
-#COPY requirements.txt .
+# Expose port 80 to the outside world
+EXPOSE 80
 
-# Install the dependencies
-RUN pip install 
-
-# Copy the application code to the container
-#COPY . .
-
-# Expose the desired port for the web application
-EXPOSE 8000
-
-# Specify the command to run the web application
-CMD ["python", "app.py"]
-
+# Start Nginx when the container launches
+CMD ["nginx", "-g", "daemon off;"]
