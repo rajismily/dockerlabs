@@ -5,7 +5,7 @@ pipeline {
 
         stage('Build') {
             steps {
-                sh 'sudo docker build -t myapp .'
+                sh"-s docker build -t myapp .'
             }
         }
 
