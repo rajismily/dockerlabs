@@ -5,8 +5,6 @@ pipeline {
 
         stage('Build') {
             steps {
-                whoami
-                git --version
                 sh 'docker build -t myapp .'
             }
         }
