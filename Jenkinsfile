@@ -5,6 +5,7 @@ pipeline {
 
         stage('Build') {
             steps {
+               echo "whoami"
                 sh 'docker build -t myapp .'
             }
         }
